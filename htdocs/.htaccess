@@ -6,3 +6,5 @@ ErrorDocument 403 "403"
 ErrorDocument 404 "404"
 ErrorDocument 500 "500"
 ErrorDocument 503 "503"
+
+SetEnv TZ Asia/Dhaka
