@@ -56,7 +56,7 @@ session_start();
           <span class="error">
           <?php
           if (isset($_SESSION['password_err'])) {
-            echo '* ' . $_SESSION['password_err'];
+            echo $_SESSION['password_err'];
           }
           ?>
           </span>
