@@ -1,3 +1,10 @@
+<?php
+if (!isset($_COOKIE['UID'])) {
+  header('Location: /login.php');
+  die();
+}
+?>
+
 <!doctype html>
 
 <meta charset="UTF-8">
