@@ -5,18 +5,14 @@ if (isset($_COOKIE['UID'])) {
 }
 
 session_start();
+
+$page_title = 'Log In - Eurus';
+require_once './resources/config.php';
+require_once TEMPLATES_DIR . '/header.php';
+
 ?>
 
-<!doctype html>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Log In - Eurus</title>
-
-<h1>Eurus</h1>
-<hr>
-
-<br>
 
 <!-- TODO: add action -->
 <form action="" method="post">
