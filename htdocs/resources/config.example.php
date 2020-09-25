@@ -1,13 +1,13 @@
 <?php
 
-$config = array(
-    'db' => array(
+$config = [
+    'db' => [
         'host' => 'localhost',
         'dbname' => 'eurusdb',
         'username' => 'root',
-        'password' => ''
-    )
-);
+        'password' => '',
+    ],
+];
 
 if (!defined('TEMPLATES_DIR')) {
     define('TEMPLATES_DIR', realpath(dirname(__FILE__) . '/templates'));
