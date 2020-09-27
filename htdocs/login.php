@@ -6,27 +6,29 @@ if (isset($_COOKIE['UID'])) {
 
 session_start();
 
+$errors = [];
+if (isset($_SESSION['errors'])) {
+  $errors = $_SESSION['errors'];
+}
+
 $page_title = 'Log In - Eurus';
 require_once './resources/config.php';
 require_once TEMPLATES_DIR . '/header.php';
 
 ?>
 
-
-
-<!-- TODO: add action -->
-<form action="" method="post">
+<form action="<?= PUBLIC_SCRIPTS_DIR . '/process_login.php' ?>" method="post">
   <fieldset>
     <legend>Log In</legend>
     <table>
       <tr>
         <td><label for="email_address">Email Address:</label></td>
         <td>
-          <input type="email" id="email_address" name="email_address" autofocus>
+          <input type="email" id="email_address" name="email_address" required autofocus>
           <span class="error">
           <?php
-          if (isset($_SESSION['email_address_err'])) {
-            echo $_SESSION['email_address_err'];
+          if (!empty($errors['email_address'])) {
+            echo $errors['email_address'];
           }
           ?>
           </span>
@@ -35,11 +37,11 @@ require_once TEMPLATES_DIR . '/header.php';
       <tr>
         <td><label for="password">Password:</label></td>
         <td>
-          <input type="password" id="password" name="password">
+          <input type="password" id="password" name="password" required>
           <span class="error">
           <?php
-          if (isset($_SESSION['password_err'])) {
-            echo $_SESSION['password_err'];
+          if (!empty($errors['password'])) {
+            echo $errors['password'];
           }
           ?>
           </span>
@@ -53,8 +55,7 @@ require_once TEMPLATES_DIR . '/header.php';
   </fieldset>
 </form>
 
-<!-- TODO: add links -->
-<p><a href=""><code>&lt;sign up/&gt;</code></a> &nbsp; <a href="/"><code>&lt;home/&gt;</code></a></p>
+<p><a href="/signup.php"><code>&lt;sign up/&gt;</code></a> &nbsp; <a href="/"><code>&lt;home/&gt;</code></a></p>
 
 <?php
 session_unset();
