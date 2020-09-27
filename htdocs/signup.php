@@ -12,8 +12,7 @@ require_once TEMPLATES_DIR . '/header.php';
 
 ?>
 
-<!-- TODO: add action -->
-<form action="" method="post">
+<form action="<?= PUBLIC_SCRIPTS_DIR . '/process_signup.php' ?>" method="post">
   <fieldset>
     <legend>Sign Up</legend>
     <table>
@@ -64,8 +63,7 @@ require_once TEMPLATES_DIR . '/header.php';
   </fieldset>
 </form>
 
-<!-- TODO: add links -->
-<p><a href=""><code>&lt;log in/&gt;</code></a> &nbsp; <a href="/"><code>&lt;home/&gt;</code></a></p>
+<p><a href="/login.php"><code>&lt;log in/&gt;</code></a> &nbsp; <a href="/"><code>&lt;home/&gt;</code></a></p>
 
 <?php
 session_unset();
