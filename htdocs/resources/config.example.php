@@ -10,9 +10,9 @@ $config = [
 ];
 
 if (!defined('LIBRARY_DIR')) {
-    define('LIBRARY_DIR', realpath(dirname(__FILE__) . '/library'));
+    define('LIBRARY_DIR', realpath(__DIR__ . '/library'));
 }
 
 if (!defined('TEMPLATES_DIR')) {
-    define('TEMPLATES_DIR', realpath(dirname(__FILE__) . '/templates'));
+    define('TEMPLATES_DIR', realpath(__DIR__ . '/templates'));
 }
