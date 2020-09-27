@@ -6,6 +6,11 @@ if (isset($_COOKIE['UID'])) {
 
 session_start();
 
+$errors = [];
+if (isset($_SESSION['errors'])) {
+  $errors = $_SESSION['errors'];
+}
+
 $page_title = 'Sign Up - Eurus';
 require_once './resources/config.php';
 require_once TEMPLATES_DIR . '/header.php';
@@ -22,8 +27,8 @@ require_once TEMPLATES_DIR . '/header.php';
           <input id="name" name="name" required autofocus>
           <span class="error">
           <?php
-          if (isset($_SESSION['name_err'])) {
-            echo $_SESSION['name_err'];
+          if (!empty($errors['name'])) {
+            echo $errors['name'];
           }
           ?>
           </span>
@@ -35,8 +40,8 @@ require_once TEMPLATES_DIR . '/header.php';
           <input type="email" id="email_address" name="email_address" required>
           <span class="error">
           <?php
-          if (isset($_SESSION['email_address_err'])) {
-            echo $_SESSION['email_address_err'];
+          if (!empty($errors['email_address'])) {
+            echo $errors['email_address'];
           }
           ?>
           </span>
@@ -48,8 +53,8 @@ require_once TEMPLATES_DIR . '/header.php';
           <input type="password" id="password" name="password" required>
           <span class="error">
           <?php
-          if (isset($_SESSION['password_err'])) {
-            echo $_SESSION['password_err'];
+          if (!empty($errors['password'])) {
+            echo $errors['password'];
           }
           ?>
           </span>
