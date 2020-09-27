@@ -34,7 +34,7 @@ function process_user_input($user_input, $input_type) {
         }
     }
 
-    elseif (!strcasecmp($user_input, 'password')) {
+    elseif (!strcasecmp($input_type, 'password')) {
         if (!strlen($user_input)) {
             $error_msg = 'Password is required';
             $processed_data['error'] = $error_msg;
