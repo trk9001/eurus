@@ -20,7 +20,7 @@ require_once TEMPLATES_DIR . '/header.php';
       <tr>
         <td><label for="name">Name:</label></td>
         <td>
-          <input type="text" id="name" name="name" autofocus>
+          <input id="name" name="name" required autofocus>
           <span class="error">
           <?php
           if (isset($_SESSION['name_err'])) {
@@ -33,7 +33,7 @@ require_once TEMPLATES_DIR . '/header.php';
       <tr>
         <td><label for="email_address">Email Address:</label></td>
         <td>
-          <input type="email" id="email_address" name="email_address" autofocus>
+          <input type="email" id="email_address" name="email_address" required>
           <span class="error">
           <?php
           if (isset($_SESSION['email_address_err'])) {
@@ -46,7 +46,7 @@ require_once TEMPLATES_DIR . '/header.php';
       <tr>
         <td><label for="password">Password:</label></td>
         <td>
-          <input type="password" id="password" name="password">
+          <input type="password" id="password" name="password" required>
           <span class="error">
           <?php
           if (isset($_SESSION['password_err'])) {
