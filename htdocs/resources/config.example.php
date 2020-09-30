@@ -7,6 +7,7 @@ $config = [
         'username' => 'root',
         'password' => '',
     ],
+    'OWM_API_KEY' => 'XXX',
 ];
 
 if (!defined('LIBRARY_DIR')) {
